@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link  href="css/style.css" rel="stylesheet">
+    <title>Neighborhood Map</title>
+  </head>
+  <body>
+    <div class="topbanner" id="topbanner">
+      <div class="logo">
+        <h1>Neighborhood Map</h1>
+      </div>
+      <input class="search-box" id="search-box" placeholder="Search..." data-bind="textInput: searchTerm, valueUpdate: 'afterkeydown'" />
+    </div>
+    <div class="list-view">
+      <div class="list">
+        <ul class="businesslist" data-bind="foreach: filterM">
+          <li class="businesses" data-bind="text: name, click: $parent.Bounce"></li>
+        </ul>
+      </div>
+    <div class="map" id="map">There has been an error loading Google Maps. Please Try Again Later!.</div>
+    </div>
+    <script src="js/mainapp.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/knockout-3.4.2.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvwu3Ip35wti_avEfQ1_vVIszatHLJInI&v=3&callback=runApp" onerror="mapError()"></script>
+  </body>
+</html>
